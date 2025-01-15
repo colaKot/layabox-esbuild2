@@ -4,6 +4,8 @@ import ResURL from '../../_T/ResURL';
 import MainConfig from '../../config/MainConfig';
 import PackageConfig from '../../config/PackageConfig';
 import { ObjectUtils } from '../../../yayaluoya-tool/obj/ObjectUtils';
+// 引入 esbuild-plugin-glslx 插件
+import glslxPlugin from 'esbuild-plugin-glslx';
 
 /**
  * src目录代理
@@ -35,8 +37,10 @@ export default class SrcProxy {
             /** layabox的shader */
             '.fs': 'text',
             '.vs': 'text',
+            '.glsl': 'text',
           },
           logLevel: 'debug',
+          plugins: [glslxPlugin()], // 添加 glslxPlugin 到插件数组中
         } as esbuild.BuildOptions,
         esbuildOp,
       ),

@@ -1,23 +1,23 @@
 {
   "name": "layabox-esbuild2",
-  "version": "2.0.10",
-  "description": "用esbuild来构建layabox项目，修改代码后立即就能看到更改，而不用傻傻等编译。",
+  "version": "2.1.2",
+  "description": "用esbuild来构建layabox项目，修改代码后立即就能看到更改，而不用傻傻等编译。Cola 改进",
   "main": "index.js",
   "bin": {
-    "layabox-esbuild2": "./dist/__bin/index.js",
-    "leb2": "./dist/__bin/index.js"
+    "layabox-esbuild2": "dist/__bin/index.js",
+    "leb2": "dist/__bin/index.js"
   },
   "scripts": {
     "rm-dist": "node ./.node/clearDist.js",
     "tsc-w": "tsc -w",
     "npm-publish": "npm publish"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "git+https://github.com/yayaluoya/layabox-esbuild2.git"
   },
-  "author": "yayaluoya@sina.com",
-  "authorName": "yayaluoya",
+  "author": "yayaluoya@sina.com,gexuan.net",
+  "authorName": "yayaluoya,colaKot",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yayaluoya/layabox-esbuild2/issues"
@@ -26,7 +26,8 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^11.0.0",
-    "esbuild": "^0.19.3",
+    "esbuild": "^0.19.12",
+    "esbuild-plugin-glslx": "0.0.4",
     "internal-ip": "^6.2.0",
     "mime": "^3.0.0",
     "moment": "^2.29.4",
@@ -34,6 +35,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.7.0",
+    "jest": "^29.7.0",
     "typescript": "^5.2.2"
+  },
+  "directories": {
+    "test": "test"
   }
 }
